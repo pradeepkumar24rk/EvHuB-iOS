@@ -9,7 +9,7 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class ViewController: UIViewController {
+class MapViewController: UIViewController {
     
     @IBOutlet weak var map: MKMapView!
     
@@ -26,16 +26,20 @@ class ViewController: UIViewController {
         
         // Start updating the location
         locationManager.startUpdatingLocation()
+        
+        // For accuracy location which is geocoded
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
     }
     
     func updateMap(with location: CLLocationCoordinate2D) {
-        let region = MKCoordinateRegion(center: location, latitudinalMeters: 500, longitudinalMeters: 500)
-        map.setRegion(region, animated: true)
+//        let region = MKCoordinateRegion(center: location, latitudinalMeters: 500, longitudinalMeters: 500)
+//        map.setRegion(region, animated: true)
         map.showsUserLocation = true
     }
 }
 
-extension ViewController: CLLocationManagerDelegate {
+extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse || status == .authorizedAlways {
             // Location access granted, start updating location
@@ -53,6 +57,21 @@ extension ViewController: CLLocationManagerDelegate {
             print("User Location: \(userLocation.latitude), \(userLocation.longitude)")
             updateMap(with: userLocation)
         }
+        
+        CLGeocoder().geocodeAddressString("Pla Plaza, 8, Old Bypass Rd, Karur, Tamil Nadu 639001") { placemarks, error in
+            if let placemark = placemarks?.first, let location = placemark.location {
+                // Create the pin
+                let pin = MKPointAnnotation()
+                pin.coordinate = location.coordinate
+                pin.title = "hello here"
+                self.map.addAnnotation(pin)
+                self.map.setCenter(location.coordinate, animated: true)
+            } else {
+                print("Not able to find the location")
+            }
+            
+        }
+        
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
