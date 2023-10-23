@@ -14,6 +14,7 @@
 		832DB2662AE3E62B0059C59A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 832DB2652AE3E62B0059C59A /* Assets.xcassets */; };
 		832DB2692AE3E62B0059C59A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 832DB2672AE3E62B0059C59A /* LaunchScreen.storyboard */; };
 		832DB2742AE3F8050059C59A /* AddPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832DB2732AE3F8050059C59A /* AddPinViewController.swift */; };
+		83ABC2732AE6A1C10090818C /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ABC2722AE6A1C10090818C /* UserDefaultsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		832DB2682AE3E62B0059C59A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		832DB26A2AE3E62B0059C59A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		832DB2732AE3F8050059C59A /* AddPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPinViewController.swift; sourceTree = "<group>"; };
+		83ABC2722AE6A1C10090818C /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				832DB2702AE3F78D0059C59A /* Model */,
 				832DB2712AE3F7A30059C59A /* View */,
 				832DB2722AE3F7AB0059C59A /* ViewModel */,
+				83ABC2712AE6A1A80090818C /* Manager */,
 				832DB25C2AE3E6220059C59A /* AppDelegate.swift */,
 				832DB25E2AE3E6220059C59A /* SceneDelegate.swift */,
 				832DB2622AE3E6220059C59A /* Main.storyboard */,
@@ -92,6 +95,14 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		83ABC2712AE6A1A80090818C /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				83ABC2722AE6A1C10090818C /* UserDefaultsManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				832DB2742AE3F8050059C59A /* AddPinViewController.swift in Sources */,
+				83ABC2732AE6A1C10090818C /* UserDefaultsManager.swift in Sources */,
 				832DB2612AE3E6220059C59A /* MapViewController.swift in Sources */,
 				832DB25D2AE3E6220059C59A /* AppDelegate.swift in Sources */,
 				832DB25F2AE3E6220059C59A /* SceneDelegate.swift in Sources */,

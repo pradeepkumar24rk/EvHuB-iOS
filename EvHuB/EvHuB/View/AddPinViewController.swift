@@ -16,5 +16,6 @@ class AddPinViewController: UIViewController {
         
     }
     @IBAction func submitBtnHandler(_ sender: Any) {
+        
     }
 }
