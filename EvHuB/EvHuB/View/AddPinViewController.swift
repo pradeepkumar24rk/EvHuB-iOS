@@ -7,18 +7,21 @@
 
 import UIKit
 
+protocol AddPinDelegate {
+    func addPin(_ data: String)
+}
+
 class AddPinViewController: UIViewController {
     @IBOutlet weak var address: UITextView!
     
-    let userDefaults = UserDefaultsManager.shared
+    var delegate: AddPinDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     @IBAction func submitBtnHandler(_ sender: Any) {
-        userDefaults.locationAddresses.append(address.text ?? "")
+        delegate?.addPin(address.text ?? "")
         self.navigationController?.popViewController(animated: true)
     }
 }

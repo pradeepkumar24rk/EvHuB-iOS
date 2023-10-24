@@ -26,11 +26,11 @@ class MapViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        pinHubLocation()
     }
     
     @IBAction func AddLocationHubHandler(_ sender: Any) {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddPinViewController")
+        guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddPinViewController") as? AddPinViewController else { return }
+        vc.delegate = self
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -75,6 +75,7 @@ extension MapViewController: CLLocationManagerDelegate {
             print("User Location: \(userLocation.latitude), \(userLocation.longitude)")
             map.showsUserLocation = true
         }
+        self.pinHubLocation()
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -88,6 +89,7 @@ extension MapViewController: MKMapViewDelegate {
         if annotation is CustomAnnotation {
             let customPinView = MKAnnotationView(annotation: annotation, reuseIdentifier: "customPin")
             customPinView.image = UIImage(named: "pinLoc")
+            customPinView.contentMode = .center
             customPinView.canShowCallout = true
             return customPinView
         }
@@ -105,4 +107,10 @@ extension MapViewController: MKMapViewDelegate {
         return MKOverlayRenderer()
     }
     
+}
+
+extension MapViewController: AddPinDelegate {
+    func addPin(_ data: String) {
+        userDefaults.locationAddresses.append(data)
+    }
 }

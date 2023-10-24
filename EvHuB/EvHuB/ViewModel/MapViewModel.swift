@@ -15,6 +15,7 @@ class MapViewModel {
     var userLocation: CLLocationCoordinate2D?
     
     func findShorestDistanceHub(completionHandler: @escaping (MKRoute?) -> Void){
+        routes = []
         findRoutes { statusBool in
             if statusBool {
                 let min = self.routes.min { r1, r2 in
