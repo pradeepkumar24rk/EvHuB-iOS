@@ -14,18 +14,18 @@ class UserDefaultsManager {
     
     private let address = "ListOfAddress"
     
-    func getUserDefaultsValue(key: String) -> String {
-        if let val = UserDefaults.standard.string(forKey: key) {
+    func getUserDefaultsValue(key: String) -> [String] {
+        if let val = UserDefaults.standard.value(forKey: key) as? [String] {
             return val
         }
-        return ""
+        return []
     }
     
-    func setUserDefaultsValue(key: String, value: String) {
+    func setUserDefaultsValue(key: String, value: [String]) {
         UserDefaults.standard.set(value, forKey: key)
     }
     
-    var locationAddresses: String {
+    var locationAddresses: [String] {
         get {
             return getUserDefaultsValue(key: address)
         }

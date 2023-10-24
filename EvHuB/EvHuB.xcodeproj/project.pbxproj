@@ -15,6 +15,8 @@
 		832DB2692AE3E62B0059C59A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 832DB2672AE3E62B0059C59A /* LaunchScreen.storyboard */; };
 		832DB2742AE3F8050059C59A /* AddPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832DB2732AE3F8050059C59A /* AddPinViewController.swift */; };
 		83ABC2732AE6A1C10090818C /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ABC2722AE6A1C10090818C /* UserDefaultsManager.swift */; };
+		83C183332AE78CED00AD32CB /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C183322AE78CED00AD32CB /* CustomAnnotation.swift */; };
+		83C183352AE7C4ED00AD32CB /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C183342AE7C4ED00AD32CB /* MapViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		832DB26A2AE3E62B0059C59A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		832DB2732AE3F8050059C59A /* AddPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPinViewController.swift; sourceTree = "<group>"; };
 		83ABC2722AE6A1C10090818C /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		83C183322AE78CED00AD32CB /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
+		83C183342AE7C4ED00AD32CB /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 		832DB2712AE3F7A30059C59A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				83C183322AE78CED00AD32CB /* CustomAnnotation.swift */,
 				832DB2602AE3E6220059C59A /* MapViewController.swift */,
 				832DB2732AE3F8050059C59A /* AddPinViewController.swift */,
 			);
@@ -93,6 +98,7 @@
 		832DB2722AE3F7AB0059C59A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				83C183342AE7C4ED00AD32CB /* MapViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -180,7 +186,9 @@
 				83ABC2732AE6A1C10090818C /* UserDefaultsManager.swift in Sources */,
 				832DB2612AE3E6220059C59A /* MapViewController.swift in Sources */,
 				832DB25D2AE3E6220059C59A /* AppDelegate.swift in Sources */,
+				83C183352AE7C4ED00AD32CB /* MapViewModel.swift in Sources */,
 				832DB25F2AE3E6220059C59A /* SceneDelegate.swift in Sources */,
+				83C183332AE78CED00AD32CB /* CustomAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

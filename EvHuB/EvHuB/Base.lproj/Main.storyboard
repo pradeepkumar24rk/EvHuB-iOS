@@ -32,7 +32,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="355-qh-QbS">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="A7Y-jC-Cfy"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="7O4-Yw-oAk">
+                            <connections>
+                                <action selector="FindNearestHub:" destination="BYZ-38-t0r" id="its-uP-Lsm"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="A7Y-jC-Cfy">
+                            <connections>
+                                <action selector="AddLocationHubHandler:" destination="BYZ-38-t0r" id="Y2P-WA-bHS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="map" destination="8Km-2I-ECI" id="xiu-WM-fik"/>
@@ -51,18 +60,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hvw-ho-heZ">
-                                <rect key="frame" x="0.0" y="59" width="393" height="128"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="80"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="9bN-eN-Qr6"/>
+                                    <constraint firstAttribute="height" constant="80" id="9bN-eN-Qr6"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iij-np-XwR">
-                                <rect key="frame" x="10" y="233" width="373" height="35"/>
+                                <rect key="frame" x="10" y="185" width="373" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="3Sg-d2-Elu"/>
                                 </constraints>
