@@ -14,9 +14,19 @@
 		832DB2662AE3E62B0059C59A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 832DB2652AE3E62B0059C59A /* Assets.xcassets */; };
 		832DB2692AE3E62B0059C59A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 832DB2672AE3E62B0059C59A /* LaunchScreen.storyboard */; };
 		832DB2742AE3F8050059C59A /* AddPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832DB2732AE3F8050059C59A /* AddPinViewController.swift */; };
+		83A35D3C2AE8E5A2005B1D1E /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A35D3B2AE8E5A2005B1D1E /* InitialViewController.swift */; };
+		83A35D3E2AE8FF0D005B1D1E /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A35D3D2AE8FF0D005B1D1E /* LaunchScreenViewController.swift */; };
+		83A35D422AE90095005B1D1E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A35D412AE90095005B1D1E /* UserModel.swift */; };
 		83ABC2732AE6A1C10090818C /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ABC2722AE6A1C10090818C /* UserDefaultsManager.swift */; };
 		83C183332AE78CED00AD32CB /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C183322AE78CED00AD32CB /* CustomAnnotation.swift */; };
 		83C183352AE7C4ED00AD32CB /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C183342AE7C4ED00AD32CB /* MapViewModel.swift */; };
+		83C75F592AE8D42300A343D1 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C75F582AE8D42300A343D1 /* Extension.swift */; };
+		83C75F5B2AE8D46D00A343D1 /* EVHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C75F5A2AE8D46D00A343D1 /* EVHelper.swift */; };
+		83C75F5D2AE8D4DE00A343D1 /* AlertControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C75F5C2AE8D4DE00A343D1 /* AlertControllerManager.swift */; };
+		83C75F5F2AE8D6EE00A343D1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C75F5E2AE8D6EE00A343D1 /* LoginViewController.swift */; };
+		83C75F612AE8D70600A343D1 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C75F602AE8D70600A343D1 /* SignUpViewController.swift */; };
+		83C75F632AE8D7E500A343D1 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C75F622AE8D7E500A343D1 /* SignUpViewModel.swift */; };
+		83C75F652AE8D7F500A343D1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C75F642AE8D7F500A343D1 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +39,19 @@
 		832DB2682AE3E62B0059C59A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		832DB26A2AE3E62B0059C59A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		832DB2732AE3F8050059C59A /* AddPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPinViewController.swift; sourceTree = "<group>"; };
+		83A35D3B2AE8E5A2005B1D1E /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		83A35D3D2AE8FF0D005B1D1E /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		83A35D412AE90095005B1D1E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		83ABC2722AE6A1C10090818C /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		83C183322AE78CED00AD32CB /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
 		83C183342AE7C4ED00AD32CB /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		83C75F582AE8D42300A343D1 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		83C75F5A2AE8D46D00A343D1 /* EVHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVHelper.swift; sourceTree = "<group>"; };
+		83C75F5C2AE8D4DE00A343D1 /* AlertControllerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerManager.swift; sourceTree = "<group>"; };
+		83C75F5E2AE8D6EE00A343D1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		83C75F602AE8D70600A343D1 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		83C75F622AE8D7E500A343D1 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		83C75F642AE8D7F500A343D1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +88,7 @@
 				832DB2712AE3F7A30059C59A /* View */,
 				832DB2722AE3F7AB0059C59A /* ViewModel */,
 				83ABC2712AE6A1A80090818C /* Manager */,
+				83C75F572AE8D3B900A343D1 /* HelperFile */,
 				832DB25C2AE3E6220059C59A /* AppDelegate.swift */,
 				832DB25E2AE3E6220059C59A /* SceneDelegate.swift */,
 				832DB2622AE3E6220059C59A /* Main.storyboard */,
@@ -81,6 +102,8 @@
 		832DB2702AE3F78D0059C59A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				83C183322AE78CED00AD32CB /* CustomAnnotation.swift */,
+				83A35D412AE90095005B1D1E /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -88,9 +111,10 @@
 		832DB2712AE3F7A30059C59A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				83C183322AE78CED00AD32CB /* CustomAnnotation.swift */,
+				83A35D3A2AE8E471005B1D1E /* AuthViews */,
 				832DB2602AE3E6220059C59A /* MapViewController.swift */,
 				832DB2732AE3F8050059C59A /* AddPinViewController.swift */,
+				83A35D3D2AE8FF0D005B1D1E /* LaunchScreenViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -99,16 +123,38 @@
 			isa = PBXGroup;
 			children = (
 				83C183342AE7C4ED00AD32CB /* MapViewModel.swift */,
+				83C75F622AE8D7E500A343D1 /* SignUpViewModel.swift */,
+				83C75F642AE8D7F500A343D1 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		83A35D3A2AE8E471005B1D1E /* AuthViews */ = {
+			isa = PBXGroup;
+			children = (
+				83A35D3B2AE8E5A2005B1D1E /* InitialViewController.swift */,
+				83C75F5E2AE8D6EE00A343D1 /* LoginViewController.swift */,
+				83C75F602AE8D70600A343D1 /* SignUpViewController.swift */,
+			);
+			path = AuthViews;
 			sourceTree = "<group>";
 		};
 		83ABC2712AE6A1A80090818C /* Manager */ = {
 			isa = PBXGroup;
 			children = (
 				83ABC2722AE6A1C10090818C /* UserDefaultsManager.swift */,
+				83C75F5C2AE8D4DE00A343D1 /* AlertControllerManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		83C75F572AE8D3B900A343D1 /* HelperFile */ = {
+			isa = PBXGroup;
+			children = (
+				83C75F582AE8D42300A343D1 /* Extension.swift */,
+				83C75F5A2AE8D46D00A343D1 /* EVHelper.swift */,
+			);
+			path = HelperFile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,13 +228,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83A35D3C2AE8E5A2005B1D1E /* InitialViewController.swift in Sources */,
+				83C75F5D2AE8D4DE00A343D1 /* AlertControllerManager.swift in Sources */,
+				83C75F632AE8D7E500A343D1 /* SignUpViewModel.swift in Sources */,
 				832DB2742AE3F8050059C59A /* AddPinViewController.swift in Sources */,
 				83ABC2732AE6A1C10090818C /* UserDefaultsManager.swift in Sources */,
 				832DB2612AE3E6220059C59A /* MapViewController.swift in Sources */,
+				83C75F5B2AE8D46D00A343D1 /* EVHelper.swift in Sources */,
+				83C75F652AE8D7F500A343D1 /* LoginViewModel.swift in Sources */,
+				83A35D422AE90095005B1D1E /* UserModel.swift in Sources */,
 				832DB25D2AE3E6220059C59A /* AppDelegate.swift in Sources */,
+				83C75F612AE8D70600A343D1 /* SignUpViewController.swift in Sources */,
+				83A35D3E2AE8FF0D005B1D1E /* LaunchScreenViewController.swift in Sources */,
 				83C183352AE7C4ED00AD32CB /* MapViewModel.swift in Sources */,
 				832DB25F2AE3E6220059C59A /* SceneDelegate.swift in Sources */,
 				83C183332AE78CED00AD32CB /* CustomAnnotation.swift in Sources */,
+				83C75F592AE8D42300A343D1 /* Extension.swift in Sources */,
+				83C75F5F2AE8D6EE00A343D1 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,9 +393,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EvHuB/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow the location to get the your current location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -364,9 +422,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EvHuB/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow the location to get the your current location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

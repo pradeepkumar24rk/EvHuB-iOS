@@ -39,6 +39,9 @@
                             <constraint firstItem="OOh-rk-VvB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="h3k-4N-03P"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="gifImageView" destination="K5N-1N-Hoj" id="OyU-Vq-Aet"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

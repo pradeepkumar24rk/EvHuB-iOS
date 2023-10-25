@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "8684364_petrol_station_fuel_maps_location_icon.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
