@@ -14,6 +14,7 @@ import MapKit
 class MapViewController: UIViewController {
     
     @IBOutlet weak var map: MKMapView!
+    @IBOutlet weak var addPinBtn: UIButton!
     
     let locationManager = CLLocationManager()
     let mapViewModel = MapViewModel()
