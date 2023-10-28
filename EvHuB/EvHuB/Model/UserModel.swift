@@ -10,4 +10,5 @@ import Foundation
 struct UserModel: Codable {
     var email = String()
     var password = String()
+    var admin = false
 }

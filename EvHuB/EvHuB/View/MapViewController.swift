@@ -14,11 +14,14 @@ import MapKit
 class MapViewController: UIViewController {
     
     @IBOutlet weak var map: MKMapView!
-    @IBOutlet weak var addPinBtn: UIButton!
+    @IBOutlet weak var profileLogo: UIImageView!
+    @IBOutlet weak var addpinBtn: UIButton!
+    @IBOutlet weak var findNearestHub: UIImageView!
     
     let locationManager = CLLocationManager()
     let mapViewModel = MapViewModel()
     let userDefaults = UserDefaultsManager.shared
+    var userInfo: UserModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +30,14 @@ class MapViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        findNearestHub.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(FindNearestHubHandler)))
+        findNearestHub.layer.cornerRadius = 20
+        profileLogo.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(profileLogoBtnHandle)))
+        if ((userInfo?.admin) != nil) {
+            findNearestHub.isHidden = true
+        } else {
+            addpinBtn.isHidden = true
+        }
     }
     
     @IBAction func AddLocationHubHandler(_ sender: Any) {
@@ -35,13 +46,18 @@ class MapViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    @IBAction func FindNearestHub(_ sender: Any) {
+    @objc func FindNearestHubHandler() {
         mapViewModel.findShorestDistanceHub { route in
             guard let route = route else { return }
             self.map.addOverlay(route.polyline, level: .aboveRoads)
             let rect = route.polyline.boundingMapRect
             self.map.setRegion(MKCoordinateRegion(rect), animated: true)
         }
+    }
+    
+    @objc func profileLogoBtnHandle() {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InitialViewController")
+        self.navigationController?.viewControllers = [vc]
     }
     
     func pinHubLocation() {
@@ -56,6 +72,8 @@ class MapViewController: UIViewController {
                 }
             }
         }
+    }
+    @IBAction func currentLocationBtnHandler(_ sender: Any) {
     }
     
 }

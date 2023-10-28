@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ric-fp-wg6">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -67,6 +67,9 @@
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="AddLocationHubHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wCa-FR-tlW"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6c2-fU-0xr">
                                 <rect key="frame" x="20" y="758" width="50" height="40"/>
@@ -79,11 +82,24 @@
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="currentLocationBtnHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="76f-O6-jsW"/>
+                                </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3915762_location_maps_navigation_pin_route_icon (2)" translatesAutoresizingMaskIntoConstraints="NO" id="VgP-XF-DEP">
+                                <rect key="frame" x="323" y="748" width="50" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="PT1-Ef-ygb"/>
+                                    <constraint firstAttribute="height" constant="50" id="dvv-t7-RcF"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="VgP-XF-DEP" firstAttribute="bottom" secondItem="K92-G9-qGh" secondAttribute="bottom" id="4Tp-zs-YXr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VgP-XF-DEP" secondAttribute="trailing" constant="20" id="B0D-RQ-rV0"/>
                             <constraint firstItem="8Km-2I-ECI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Cbr-bL-fa7"/>
                             <constraint firstItem="8Km-2I-ECI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-63" id="JDn-yS-9Wc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jO6-wp-hyR" secondAttribute="trailing" constant="16" id="LRG-pB-HPg"/>
@@ -99,19 +115,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="355-qh-QbS">
-                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="7O4-Yw-oAk">
-                            <connections>
-                                <action selector="FindNearestHub:" destination="BYZ-38-t0r" id="its-uP-Lsm"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="A7Y-jC-Cfy">
-                            <connections>
-                                <action selector="AddLocationHubHandler:" destination="BYZ-38-t0r" id="Y2P-WA-bHS"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="7O4-Yw-oAk"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="A7Y-jC-Cfy"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="addpinBtn" destination="K92-G9-qGh" id="O0V-wE-nSa"/>
+                        <outlet property="findNearestHub" destination="VgP-XF-DEP" id="57X-Rt-85z"/>
                         <outlet property="map" destination="8Km-2I-ECI" id="xiu-WM-fik"/>
+                        <outlet property="profileLogo" destination="bND-yM-yC0" id="TQx-tP-3GC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -233,10 +244,10 @@
             </objects>
             <point key="canvasLocation" x="3060" y="-673"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="ZYd-8Q-53O">
             <objects>
-                <viewController id="mUe-s6-Byc" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="mUe-s6-Byc" customClass="LoginViewController" customModule="EvHuB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iPN-SY-9Tw">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -301,6 +312,9 @@
                                                     <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="28"/>
                                                     <color key="baseBackgroundColor" systemColor="systemPinkColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="loginBtnHandler:" destination="mUe-s6-Byc" eventType="touchUpInside" id="2bL-4e-6TJ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRD-uV-UVU">
                                                 <rect key="frame" x="24" y="698" width="345" height="35"/>
@@ -309,6 +323,9 @@
                                                     <fontDescription key="titleFontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
                                                     <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="signUpBtnHandler:" destination="mUe-s6-Byc" eventType="touchUpInside" id="Htb-jT-Hmr"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -355,15 +372,21 @@
                             <constraint firstItem="asS-7R-mfj" firstAttribute="bottom" secondItem="Ewt-op-OhW" secondAttribute="bottom" id="twk-nF-4hn"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginBtn" destination="rPW-jk-V91" id="CmY-rt-sBe"/>
+                        <outlet property="password" destination="2VN-4G-TEN" id="gwH-Cf-gnA"/>
+                        <outlet property="signUpBtn" destination="bRD-uV-UVU" id="TVe-gD-w5O"/>
+                        <outlet property="username" destination="tSR-jG-szT" id="m4v-W5-yx8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KEi-n8-juk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="548.85496183206101" y="-672.53521126760563"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="A7Z-si-A70">
             <objects>
-                <viewController id="eHW-tK-AY1" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpViewController" id="eHW-tK-AY1" customClass="SignUpViewController" customModule="EvHuB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MdS-YJ-IA3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -428,6 +451,9 @@
                                                     <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="28"/>
                                                     <color key="baseBackgroundColor" systemColor="systemPinkColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="signUpBtnHandler:" destination="eHW-tK-AY1" eventType="touchUpInside" id="oae-Ua-m7x"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsO-nt-IhY">
                                                 <rect key="frame" x="24" y="714" width="345" height="35"/>
@@ -436,6 +462,9 @@
                                                     <fontDescription key="titleFontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
                                                     <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="loginBtnHandler:" destination="eHW-tK-AY1" eventType="touchUpInside" id="xZc-8J-fBC"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -482,6 +511,12 @@
                             <constraint firstItem="r9g-cT-yTJ" firstAttribute="top" secondItem="Wp3-dm-LST" secondAttribute="top" id="o1K-a5-n34"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginBtn" destination="hsO-nt-IhY" id="215-0d-dCJ"/>
+                        <outlet property="password" destination="t2Q-Ha-wnk" id="rEd-vN-Mff"/>
+                        <outlet property="signUpBtn" destination="tLR-Vg-Bhg" id="iRk-4G-2Gr"/>
+                        <outlet property="username" destination="S5a-8z-lpb" id="Idf-Z7-2v9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nQ5-sO-1Gd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -512,11 +547,17 @@
                                     <color key="baseForegroundColor" red="0.92156862750000001" green="0.21960784310000001" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="adminBtnHandler:" destination="ka9-ih-VuR" eventType="touchUpInside" id="ygn-lf-Qy6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihb-I2-4GD">
                                 <rect key="frame" x="36" y="519" width="321" height="60"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Login or Sigup as a User" cornerStyle="medium"/>
+                                <connections>
+                                    <action selector="userBtnHandler:" destination="ka9-ih-VuR" eventType="touchUpInside" id="Tt1-WN-8ja"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hGi-Pa-7tM"/>
@@ -562,17 +603,17 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="gifImageView" destination="yMH-fv-Gie" id="LAZ-qD-LyY"/>
+                        <outlet property="logoImageView" destination="yMH-fv-Gie" id="nXi-ma-bPp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ddR-si-HoE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1059" y="-673"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="wTX-v7-s2H">
             <objects>
-                <viewController id="c1r-eM-WRD" sceneMemberID="viewController">
+                <viewController id="c1r-eM-WRD" customClass="EVProfileViewController" customModule="EvHuB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r7i-NX-HLJ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -598,6 +639,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="3915762_location_maps_navigation_pin_route_icon (2)" width="48" height="48"/>
         <image name="EvLaunch" width="279" height="180"/>
         <image name="initial" width="512" height="512"/>
         <image name="location" catalog="system" width="128" height="121"/>

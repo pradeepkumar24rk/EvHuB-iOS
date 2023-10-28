@@ -12,7 +12,6 @@ class EVProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
     }
 
 }

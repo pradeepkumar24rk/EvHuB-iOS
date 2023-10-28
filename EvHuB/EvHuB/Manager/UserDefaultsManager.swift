@@ -55,7 +55,7 @@ class UserDefaultsManager {
             return []
         }
         set {
-            setUserDict(key: usersData,["users":newValue])
+            setUserDict(key: usersData,["users": newValue])
         }
     }
 }

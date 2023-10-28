@@ -16,9 +16,11 @@ class SignUpViewController: UIViewController {
     
     let alertControllerManager = AlertControllerManager.shared
     let signUpViewModel = SignUpViewModel()
+    var userInfo: UserModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = true
         signUpBtn.layer.cornerRadius = 20
         loginBtn.designButton(title: "Already have an account? Login", changeColorText: "Login")
         username.designTextField()
@@ -26,23 +28,22 @@ class SignUpViewController: UIViewController {
         password.isSecureTextEntry = true
     }
     @IBAction func signUpBtnHandler(_ sender: Any) {
-        let data = UserModel(email: username.text ?? "", password: password.text ?? "")
-        if signUpViewModel.signUpValidation(check: data) {
-            signUpViewModel.addNewUser(newUser: data)
+        userInfo?.email = username.text ?? ""
+        userInfo?.password = password.text ?? ""
+        if signUpViewModel.signUpValidation(check: userInfo ?? UserModel()) {
+            signUpViewModel.addNewUser(newUser: userInfo ?? UserModel())
             print("added")
-//            guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ListViewController") as? ListViewController else { return }
-//            vc.indexOfUser = signUpViewModel.lastUser
-//            let navcontroller = UINavigationController(rootViewController: vc)
-//            self.view.window?.rootViewController = navcontroller
-//            self.view.window?.makeKeyAndVisible()
+            guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MapViewController") as? MapViewController else { return }
+            vc.userInfo = self.userInfo
+            let navcontroller = UINavigationController(rootViewController: vc)
+            self.view.window?.rootViewController = navcontroller
+            self.view.window?.makeKeyAndVisible()
         } else {
             alertControllerManager.showAlert(on: self, title: "Invalid", message: signUpViewModel.message, disableCancel: true)
         }
     }
     
     @IBAction func loginBtnHandler(_ sender: Any) {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
-        self.view.window?.rootViewController = vc
-        self.view.window?.makeKeyAndVisible()
+        self.navigationController?.popViewController(animated: true)
     }
 }

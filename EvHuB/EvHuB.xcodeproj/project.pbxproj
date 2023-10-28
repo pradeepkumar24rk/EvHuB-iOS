@@ -14,6 +14,8 @@
 		832DB2662AE3E62B0059C59A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 832DB2652AE3E62B0059C59A /* Assets.xcassets */; };
 		832DB2692AE3E62B0059C59A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 832DB2672AE3E62B0059C59A /* LaunchScreen.storyboard */; };
 		832DB2742AE3F8050059C59A /* AddPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832DB2732AE3F8050059C59A /* AddPinViewController.swift */; };
+		835D041B2AED51E500A329D6 /* EVProfileHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835D04192AED51E500A329D6 /* EVProfileHeaderTableViewCell.swift */; };
+		835D041C2AED51E500A329D6 /* EVProfileHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 835D041A2AED51E500A329D6 /* EVProfileHeaderTableViewCell.xib */; };
 		83A35D3C2AE8E5A2005B1D1E /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A35D3B2AE8E5A2005B1D1E /* InitialViewController.swift */; };
 		83A35D422AE90095005B1D1E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A35D412AE90095005B1D1E /* UserModel.swift */; };
 		83A815602AEBD49300ECEF48 /* EVProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A8155F2AEBD49300ECEF48 /* EVProfileViewController.swift */; };
@@ -29,6 +31,7 @@
 		83C75F612AE8D70600A343D1 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C75F602AE8D70600A343D1 /* SignUpViewController.swift */; };
 		83C75F632AE8D7E500A343D1 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C75F622AE8D7E500A343D1 /* SignUpViewModel.swift */; };
 		83C75F652AE8D7F500A343D1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C75F642AE8D7F500A343D1 /* LoginViewModel.swift */; };
+		83D4371E2AED5B3A005F494F /* LaunchScreenViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D4371D2AED5B3A005F494F /* LaunchScreenViewControler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +44,8 @@
 		832DB2682AE3E62B0059C59A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		832DB26A2AE3E62B0059C59A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		832DB2732AE3F8050059C59A /* AddPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPinViewController.swift; sourceTree = "<group>"; };
+		835D04192AED51E500A329D6 /* EVProfileHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVProfileHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		835D041A2AED51E500A329D6 /* EVProfileHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVProfileHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		83A35D3B2AE8E5A2005B1D1E /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		83A35D412AE90095005B1D1E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		83A8155F2AEBD49300ECEF48 /* EVProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVProfileViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +61,7 @@
 		83C75F602AE8D70600A343D1 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		83C75F622AE8D7E500A343D1 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		83C75F642AE8D7F500A343D1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		83D4371D2AED5B3A005F494F /* LaunchScreenViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewControler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,7 @@
 		832DB2712AE3F7A30059C59A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				83D4371D2AED5B3A005F494F /* LaunchScreenViewControler.swift */,
 				83A35D3A2AE8E471005B1D1E /* AuthViews */,
 				832DB2602AE3E6220059C59A /* MapViewController.swift */,
 				832DB2732AE3F8050059C59A /* AddPinViewController.swift */,
@@ -149,6 +156,8 @@
 			children = (
 				83A815642AEBD9F100ECEF48 /* EVTableViewCell.swift */,
 				83A815652AEBD9F100ECEF48 /* EVTableViewCell.xib */,
+				835D04192AED51E500A329D6 /* EVProfileHeaderTableViewCell.swift */,
+				835D041A2AED51E500A329D6 /* EVProfileHeaderTableViewCell.xib */,
 			);
 			path = XiB;
 			sourceTree = "<group>";
@@ -233,6 +242,7 @@
 				832DB2662AE3E62B0059C59A /* Assets.xcassets in Resources */,
 				83A815672AEBD9F100ECEF48 /* EVTableViewCell.xib in Resources */,
 				832DB2642AE3E6220059C59A /* Main.storyboard in Resources */,
+				835D041C2AED51E500A329D6 /* EVProfileHeaderTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +261,7 @@
 				83ABC2732AE6A1C10090818C /* UserDefaultsManager.swift in Sources */,
 				832DB2612AE3E6220059C59A /* MapViewController.swift in Sources */,
 				83C75F5B2AE8D46D00A343D1 /* EVHelper.swift in Sources */,
+				83D4371E2AED5B3A005F494F /* LaunchScreenViewControler.swift in Sources */,
 				83C75F652AE8D7F500A343D1 /* LoginViewModel.swift in Sources */,
 				83A35D422AE90095005B1D1E /* UserModel.swift in Sources */,
 				83A815662AEBD9F100ECEF48 /* EVTableViewCell.swift in Sources */,
@@ -259,6 +270,7 @@
 				83C183352AE7C4ED00AD32CB /* MapViewModel.swift in Sources */,
 				832DB25F2AE3E6220059C59A /* SceneDelegate.swift in Sources */,
 				83C183332AE78CED00AD32CB /* CustomAnnotation.swift in Sources */,
+				835D041B2AED51E500A329D6 /* EVProfileHeaderTableViewCell.swift in Sources */,
 				83C75F592AE8D42300A343D1 /* Extension.swift in Sources */,
 				83C75F5F2AE8D6EE00A343D1 /* LoginViewController.swift in Sources */,
 			);
