@@ -40,11 +40,11 @@ class MapViewController: UIViewController {
         }
     }
     
-    @IBAction func AddLocationHubHandler(_ sender: Any) {
+    @IBAction func addPinBtnHandler(_ sender: Any) {
         guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddPinViewController") as? AddPinViewController else { return }
         vc.delegate = self
         self.navigationController?.pushViewController(vc, animated: true)
-    }
+    } 
     
     @objc func FindNearestHubHandler() {
         mapViewModel.findShorestDistanceHub { route in

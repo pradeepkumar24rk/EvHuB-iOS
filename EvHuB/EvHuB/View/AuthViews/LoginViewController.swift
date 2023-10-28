@@ -30,6 +30,7 @@ class LoginViewController: UIViewController {
     @IBAction func loginBtnHandler(_ sender: Any) {
         if loginViewModel.FindingUser(emailId: username.text ?? "", password: password.text ?? "") {
           guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MapViewController") as? MapViewController else { return }
+            vc.userInfo = self.userInfo
             let navcontroller = UINavigationController(rootViewController: vc)
             self.view.window?.rootViewController = navcontroller
             self.view.window?.makeKeyAndVisible()

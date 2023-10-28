@@ -37,7 +37,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userProfile" translatesAutoresizingMaskIntoConstraints="NO" id="bND-yM-yC0">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userProfile" translatesAutoresizingMaskIntoConstraints="NO" id="bND-yM-yC0">
                                         <rect key="frame" x="299" y="5" width="57" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="57" id="c2A-Ed-vui"/>
@@ -68,7 +68,7 @@
                                     <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="AddLocationHubHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wCa-FR-tlW"/>
+                                    <action selector="addPinBtnHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S4C-qx-nFC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6c2-fU-0xr">
@@ -86,7 +86,7 @@
                                     <action selector="currentLocationBtnHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="76f-O6-jsW"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3915762_location_maps_navigation_pin_route_icon (2)" translatesAutoresizingMaskIntoConstraints="NO" id="VgP-XF-DEP">
+                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3915762_location_maps_navigation_pin_route_icon (2)" translatesAutoresizingMaskIntoConstraints="NO" id="VgP-XF-DEP">
                                 <rect key="frame" x="323" y="748" width="50" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
