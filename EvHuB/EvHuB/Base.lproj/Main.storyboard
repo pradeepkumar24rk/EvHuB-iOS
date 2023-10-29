@@ -30,9 +30,9 @@
                                 <standardMapConfiguration key="preferredConfiguration" showsTraffic="YES"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jO6-wp-hyR">
-                                <rect key="frame" x="16" y="81" width="361" height="54"/>
+                                <rect key="frame" x="16" y="59" width="361" height="54"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Obn-LA-Ktc">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Obn-LA-Ktc">
                                         <rect key="frame" x="5" y="0.0" width="289" height="54"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -57,35 +57,6 @@
                                     <constraint firstItem="bND-yM-yC0" firstAttribute="top" secondItem="jO6-wp-hyR" secondAttribute="top" constant="5" id="nUQ-JW-96B"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K92-G9-qGh">
-                                <rect key="frame" x="323" y="748" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="uJR-5F-QMw"/>
-                                    <constraint firstAttribute="width" constant="50" id="z73-BV-gLo"/>
-                                </constraints>
-                                <buttonConfiguration key="configuration" style="filled" image="plus" catalog="system" cornerStyle="large">
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="addPinBtnHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S4C-qx-nFC"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6c2-fU-0xr">
-                                <rect key="frame" x="20" y="758" width="50" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="YAJ-ps-1tj"/>
-                                    <constraint firstAttribute="height" constant="40" id="uR4-lU-00v"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" image="location" catalog="system" cornerStyle="large">
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="currentLocationBtnHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="76f-O6-jsW"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3915762_location_maps_navigation_pin_route_icon (2)" translatesAutoresizingMaskIntoConstraints="NO" id="VgP-XF-DEP">
                                 <rect key="frame" x="323" y="748" width="50" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -94,40 +65,42 @@
                                     <constraint firstAttribute="height" constant="50" id="dvv-t7-RcF"/>
                                 </constraints>
                             </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="currentLocation" translatesAutoresizingMaskIntoConstraints="NO" id="efW-FH-qJk">
+                                <rect key="frame" x="20" y="748" width="50" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="GO1-VU-YiL"/>
+                                    <constraint firstAttribute="height" constant="50" id="NIx-xb-NRx"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="VgP-XF-DEP" firstAttribute="bottom" secondItem="K92-G9-qGh" secondAttribute="bottom" id="4Tp-zs-YXr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="efW-FH-qJk" secondAttribute="bottom" constant="20" id="2vr-lj-LVE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VgP-XF-DEP" secondAttribute="trailing" constant="20" id="B0D-RQ-rV0"/>
                             <constraint firstItem="8Km-2I-ECI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Cbr-bL-fa7"/>
+                            <constraint firstItem="jO6-wp-hyR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="H3H-Ma-LbR"/>
                             <constraint firstItem="8Km-2I-ECI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-63" id="JDn-yS-9Wc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jO6-wp-hyR" secondAttribute="trailing" constant="16" id="LRG-pB-HPg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="K92-G9-qGh" secondAttribute="bottom" constant="20" id="ZMR-aS-FGj"/>
                             <constraint firstItem="jO6-wp-hyR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ayV-lJ-GFm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8Km-2I-ECI" secondAttribute="bottom" constant="-34" id="bCO-Op-9Ya"/>
-                            <constraint firstItem="jO6-wp-hyR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="bUo-7I-5yf"/>
-                            <constraint firstItem="6c2-fU-0xr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cQb-Rb-7vg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Km-2I-ECI" secondAttribute="trailing" id="hQr-W1-3wx"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6c2-fU-0xr" secondAttribute="bottom" constant="20" id="kKx-0x-EYq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="K92-G9-qGh" secondAttribute="trailing" constant="20" id="lWc-hC-pP1"/>
-                            <constraint firstItem="K92-G9-qGh" firstAttribute="leading" secondItem="6c2-fU-0xr" secondAttribute="trailing" constant="253" id="pVd-qD-cGe"/>
+                            <constraint firstItem="efW-FH-qJk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tOG-NE-iUt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VgP-XF-DEP" secondAttribute="bottom" constant="20" id="tRn-Pb-jiW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="355-qh-QbS">
-                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="7O4-Yw-oAk"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="A7Y-jC-Cfy"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="355-qh-QbS"/>
                     <connections>
-                        <outlet property="addpinBtn" destination="K92-G9-qGh" id="O0V-wE-nSa"/>
-                        <outlet property="findNearestHub" destination="VgP-XF-DEP" id="57X-Rt-85z"/>
+                        <outlet property="bottomRightBtn" destination="VgP-XF-DEP" id="YlD-Ge-NgL"/>
+                        <outlet property="currentLoctionBtn" destination="efW-FH-qJk" id="J6h-Ql-8k6"/>
                         <outlet property="map" destination="8Km-2I-ECI" id="xiu-WM-fik"/>
                         <outlet property="profileLogo" destination="bND-yM-yC0" id="TQx-tP-3GC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2229.770992366412" y="-673.23943661971839"/>
+            <point key="canvasLocation" x="3156.4885496183206" y="-673.23943661971839"/>
         </scene>
         <!--Add Pin View Controller-->
         <scene sceneID="Bpi-YC-JKC">
@@ -242,7 +215,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eN1-yX-ISA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3060" y="-673"/>
+            <point key="canvasLocation" x="3985.4961832061067" y="-673.23943661971839"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="ZYd-8Q-53O">
@@ -613,7 +586,7 @@
         <!--Profile View Controller-->
         <scene sceneID="wTX-v7-s2H">
             <objects>
-                <viewController id="c1r-eM-WRD" customClass="EVProfileViewController" customModule="EvHuB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EVProfileViewController" id="c1r-eM-WRD" customClass="EVProfileViewController" customModule="EvHuB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r7i-NX-HLJ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -632,18 +605,20 @@
                             <constraint firstItem="hWs-cR-od2" firstAttribute="trailing" secondItem="cZX-YC-iCV" secondAttribute="trailing" id="vyZ-HB-LMF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="cZX-YC-iCV" id="lQA-4K-1xl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HJS-cO-U1k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3918" y="-673"/>
+            <point key="canvasLocation" x="4843.5114503816794" y="-673.23943661971839"/>
         </scene>
     </scenes>
     <resources>
         <image name="3915762_location_maps_navigation_pin_route_icon (2)" width="48" height="48"/>
         <image name="EvLaunch" width="279" height="180"/>
+        <image name="currentLocation" width="512" height="512"/>
         <image name="initial" width="512" height="512"/>
-        <image name="location" catalog="system" width="128" height="121"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="userProfile" width="512" height="512"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

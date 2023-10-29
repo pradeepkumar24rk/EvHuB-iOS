@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct HubModel: Codable {
+    var name = String()
+    var address = String()
+}

@@ -26,6 +26,12 @@ class SignUpViewController: UIViewController {
         username.designTextField()
         password.designTextField()
         password.isSecureTextEntry = true
+        guard let val = userInfo?.admin else { return }
+        if val {
+            self.navigationItem.title = "Admin SignUp"
+        } else {
+            self.navigationItem.title = "User SignUp"
+        }
     }
     @IBAction func signUpBtnHandler(_ sender: Any) {
         userInfo?.email = username.text ?? ""

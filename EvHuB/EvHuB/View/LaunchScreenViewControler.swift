@@ -25,7 +25,8 @@ class LaunchScreenViewController: UIViewController {
             }) { _ in
                 // Animation completion block - navigate to the second view controller
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "InitialViewController")
-                self.view.window?.rootViewController = vc
+                let nav = UINavigationController(rootViewController: vc!)
+                self.view.window?.rootViewController = nav
                 self.view.window?.makeKeyAndVisible()
             }
         }

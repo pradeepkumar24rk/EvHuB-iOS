@@ -16,6 +16,8 @@
 		832DB2742AE3F8050059C59A /* AddPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832DB2732AE3F8050059C59A /* AddPinViewController.swift */; };
 		835D041B2AED51E500A329D6 /* EVProfileHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835D04192AED51E500A329D6 /* EVProfileHeaderTableViewCell.swift */; };
 		835D041C2AED51E500A329D6 /* EVProfileHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 835D041A2AED51E500A329D6 /* EVProfileHeaderTableViewCell.xib */; };
+		838D08602AEE2042005F28C3 /* HubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838D085F2AEE2042005F28C3 /* HubModel.swift */; };
+		838D08622AEE5C1A005F28C3 /* EVProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838D08612AEE5C1A005F28C3 /* EVProfileViewModel.swift */; };
 		83A35D3C2AE8E5A2005B1D1E /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A35D3B2AE8E5A2005B1D1E /* InitialViewController.swift */; };
 		83A35D422AE90095005B1D1E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A35D412AE90095005B1D1E /* UserModel.swift */; };
 		83A815602AEBD49300ECEF48 /* EVProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A8155F2AEBD49300ECEF48 /* EVProfileViewController.swift */; };
@@ -46,6 +48,8 @@
 		832DB2732AE3F8050059C59A /* AddPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPinViewController.swift; sourceTree = "<group>"; };
 		835D04192AED51E500A329D6 /* EVProfileHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVProfileHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		835D041A2AED51E500A329D6 /* EVProfileHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EVProfileHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		838D085F2AEE2042005F28C3 /* HubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubModel.swift; sourceTree = "<group>"; };
+		838D08612AEE5C1A005F28C3 /* EVProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVProfileViewModel.swift; sourceTree = "<group>"; };
 		83A35D3B2AE8E5A2005B1D1E /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		83A35D412AE90095005B1D1E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		83A8155F2AEBD49300ECEF48 /* EVProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVProfileViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 			children = (
 				83C183322AE78CED00AD32CB /* CustomAnnotation.swift */,
 				83A35D412AE90095005B1D1E /* UserModel.swift */,
+				838D085F2AEE2042005F28C3 /* HubModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -137,6 +142,7 @@
 				83C183342AE7C4ED00AD32CB /* MapViewModel.swift */,
 				83C75F622AE8D7E500A343D1 /* SignUpViewModel.swift */,
 				83C75F642AE8D7F500A343D1 /* LoginViewModel.swift */,
+				838D08612AEE5C1A005F28C3 /* EVProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -253,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				838D08602AEE2042005F28C3 /* HubModel.swift in Sources */,
 				83A35D3C2AE8E5A2005B1D1E /* InitialViewController.swift in Sources */,
 				83C75F5D2AE8D4DE00A343D1 /* AlertControllerManager.swift in Sources */,
 				83A815602AEBD49300ECEF48 /* EVProfileViewController.swift in Sources */,
@@ -270,6 +277,7 @@
 				83C183352AE7C4ED00AD32CB /* MapViewModel.swift in Sources */,
 				832DB25F2AE3E6220059C59A /* SceneDelegate.swift in Sources */,
 				83C183332AE78CED00AD32CB /* CustomAnnotation.swift in Sources */,
+				838D08622AEE5C1A005F28C3 /* EVProfileViewModel.swift in Sources */,
 				835D041B2AED51E500A329D6 /* EVProfileHeaderTableViewCell.swift in Sources */,
 				83C75F592AE8D42300A343D1 /* Extension.swift in Sources */,
 				83C75F5F2AE8D6EE00A343D1 /* LoginViewController.swift in Sources */,

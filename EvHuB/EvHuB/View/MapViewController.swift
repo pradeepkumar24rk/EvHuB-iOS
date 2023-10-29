@@ -15,8 +15,8 @@ class MapViewController: UIViewController {
     
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var profileLogo: UIImageView!
-    @IBOutlet weak var addpinBtn: UIButton!
-    @IBOutlet weak var findNearestHub: UIImageView!
+    @IBOutlet weak var bottomRightBtn: UIImageView!
+    @IBOutlet weak var currentLoctionBtn: UIImageView!
     
     let locationManager = CLLocationManager()
     let mapViewModel = MapViewModel()
@@ -30,34 +30,55 @@ class MapViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        findNearestHub.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(FindNearestHubHandler)))
-        findNearestHub.layer.cornerRadius = 20
+        bottomRightBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(rightBtnHandler)))
+        bottomRightBtn.layer.cornerRadius = 20
+        currentLoctionBtn.layer.cornerRadius = 20
         profileLogo.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(profileLogoBtnHandle)))
-        if ((userInfo?.admin) != nil) {
-            findNearestHub.isHidden = true
+        currentLoctionBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(currentLocationBtnHandler)))
+        guard let val = userInfo?.admin else { return }
+        if val {
+            bottomRightBtn.image = UIImage(named: "addPin")
+        }
+    }
+    // MARK: - RIGHT BTN
+    @objc func rightBtnHandler() {
+        guard let val = userInfo?.admin else { return }
+        if val {
+            guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddPinViewController") as? AddPinViewController else { return }
+            vc.delegate = self
+            self.navigationController?.pushViewController(vc, animated: true)
         } else {
-            addpinBtn.isHidden = true
+            mapViewModel.findShorestDistanceHub { route in
+                guard let route = route else { return }
+                self.map.addOverlay(route.polyline, level: .aboveRoads)
+                let rect = route.polyline.boundingMapRect
+                self.map.setRegion(MKCoordinateRegion(rect), animated: true)
+            }
         }
     }
-    
-    @IBAction func addPinBtnHandler(_ sender: Any) {
-        guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddPinViewController") as? AddPinViewController else { return }
-        vc.delegate = self
-        self.navigationController?.pushViewController(vc, animated: true)
-    } 
-    
-    @objc func FindNearestHubHandler() {
-        mapViewModel.findShorestDistanceHub { route in
-            guard let route = route else { return }
-            self.map.addOverlay(route.polyline, level: .aboveRoads)
-            let rect = route.polyline.boundingMapRect
-            self.map.setRegion(MKCoordinateRegion(rect), animated: true)
-        }
-    }
-    
+    //MARK: - PROFILE
     @objc func profileLogoBtnHandle() {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InitialViewController")
-        self.navigationController?.viewControllers = [vc]
+        guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EVProfileViewController") as? EVProfileViewController else { return }
+                vc.userInfo = self.userInfo
+                self.navigationController?.pushViewController(vc, animated: true)
+    }
+    //MARK: - CURRENT LOCATION
+    @objc func currentLocationBtnHandler() {
+        if let userLocation = locationManager.location?.coordinate {
+            // User's location is available, center the map on it
+            let region = MKCoordinateRegion(center: userLocation, latitudinalMeters: 500, longitudinalMeters: 500)
+            map.setRegion(region, animated: true)
+        } else {
+            // User's location is not available, start updating location to obtain it
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func updateLocation(with location: CLLocationCoordinate2D) {
+        let region = MKCoordinateRegion(center: location, latitudinalMeters: 500, longitudinalMeters: 500)
+        map.setRegion(region, animated: true)
+        map.showsUserLocation = true
+        
     }
     
     func pinHubLocation() {
@@ -73,9 +94,6 @@ class MapViewController: UIViewController {
             }
         }
     }
-    @IBAction func currentLocationBtnHandler(_ sender: Any) {
-    }
-    
 }
 
 extension MapViewController: CLLocationManagerDelegate {
@@ -88,12 +106,14 @@ extension MapViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        // MARK: -  CURRENT LOCATION
         if let location = locations.last {
             let userLocation = location.coordinate
             mapViewModel.userLocation = userLocation
             print("User Location: \(userLocation.latitude), \(userLocation.longitude)")
             map.showsUserLocation = true
         }
+        
         self.pinHubLocation()
     }
     
@@ -104,6 +124,7 @@ extension MapViewController: CLLocationManagerDelegate {
 
 
 extension MapViewController: MKMapViewDelegate {
+    // MARK: - ANNOTATION
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is CustomAnnotation {
             let customPinView = MKAnnotationView(annotation: annotation, reuseIdentifier: "customPin")
@@ -114,8 +135,7 @@ extension MapViewController: MKMapViewDelegate {
         }
         return nil
     }
-    
-    
+    // MARK: - ROUTE
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if overlay is MKPolyline {
             let renderer = MKPolylineRenderer(overlay: overlay)
@@ -126,6 +146,9 @@ extension MapViewController: MKMapViewDelegate {
         return MKOverlayRenderer()
     }
     
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        print(view.annotation?.title)
+    }
 }
 
 extension MapViewController: AddPinDelegate {

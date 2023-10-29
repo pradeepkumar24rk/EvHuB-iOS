@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ProfileViewModel {
+class EVProfileViewModel {
     let categoryAdmin = ["Slot Booked", "Logout"]
     let categoryUser = ["Logout"]
 }

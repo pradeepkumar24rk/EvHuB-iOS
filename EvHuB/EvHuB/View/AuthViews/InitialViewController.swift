@@ -16,16 +16,12 @@ class InitialViewController: UIViewController {
     @IBAction func adminBtnHandler(_ sender: Any) {
         guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController else { return }
         vc.userInfo = UserModel(admin: true)
-        let nav = UINavigationController(rootViewController: vc)
-        self.view.window?.rootViewController = nav
-        self.view.window?.makeKeyAndVisible()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func userBtnHandler(_ sender: Any) {
         guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController else { return }
         vc.userInfo = UserModel()
-        let nav = UINavigationController(rootViewController: vc)
-        self.view.window?.rootViewController = nav
-        self.view.window?.makeKeyAndVisible()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -9,15 +9,23 @@ import UIKit
 
 class EVProfileHeaderTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var userProfileImage: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    
+    static let identifier = "EVProfileHeaderTableViewCell"
+    
+    static func nib() -> UINib {
+        return UINib(nibName: "EVProfileHeaderTableViewCell", bundle: nil)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
+    func config(name: String?) {
+        if let val = name {
+            userNameLabel.text = val
+        }
+    }
 }

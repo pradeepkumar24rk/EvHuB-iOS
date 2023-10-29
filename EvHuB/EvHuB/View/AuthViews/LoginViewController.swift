@@ -20,12 +20,18 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = true
         loginBtn.layer.cornerRadius = 20
         signUpBtn.designButton(title: "Don’t have an account? Sign Up", changeColorText: "Sign Up")
         username.designTextField()
         password.designTextField()
         password.isSecureTextEntry = true
+        guard let val = userInfo?.admin else { return }
+        if val {
+            self.navigationItem.title = "Admin Login"
+        } else {
+            self.navigationItem.title = "User Login"
+        }
+//        self.navigationItem.backAction = UIAction(handler:)
     }
     @IBAction func loginBtnHandler(_ sender: Any) {
         if loginViewModel.FindingUser(emailId: username.text ?? "", password: password.text ?? "") {

@@ -9,15 +9,21 @@ import UIKit
 
 class EVTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var rowLabel: UILabel!
+    
+    static let identifier = "EVTableViewCell"
+    
+    static func nib() -> UINib {
+        return UINib(nibName: "EVTableViewCell", bundle: nil)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func config(_ data: String) {
+        rowLabel.text = data
     }
     
 }
