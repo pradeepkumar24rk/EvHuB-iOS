@@ -33,13 +33,20 @@ class EVProfileViewController: UIViewController {
 
 extension EVProfileViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        50
+        100
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let sectionHeader = tableView.dequeueReusableCell(withIdentifier: EVProfileHeaderTableViewCell.identifier) as? EVProfileHeaderTableViewCell else { return UITableViewCell() }
         sectionHeader.config(name: userInfo?.email)
         return sectionHeader
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if rowData[indexPath.row] == "Logout" {
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InitialViewController")
+            self.navigationController?.viewControllers = [vc]
+        }
     }
 }
 

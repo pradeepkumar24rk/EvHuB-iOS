@@ -96,6 +96,7 @@
                         <outlet property="currentLoctionBtn" destination="efW-FH-qJk" id="J6h-Ql-8k6"/>
                         <outlet property="map" destination="8Km-2I-ECI" id="xiu-WM-fik"/>
                         <outlet property="profileLogo" destination="bND-yM-yC0" id="TQx-tP-3GC"/>
+                        <outlet property="searchBarView" destination="jO6-wp-hyR" id="nZX-oU-sQ2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -617,7 +618,7 @@
         <!--Annotation View Controller-->
         <scene sceneID="pgl-xT-LGs">
             <objects>
-                <viewController storyboardIdentifier="EVAnnotationViewController" id="rFV-Lz-jzm" customClass="EVAnnotationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EVAnnotationViewController" id="rFV-Lz-jzm" customClass="EVAnnotationViewController" customModule="EvHuB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dJD-VY-LAj">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -641,9 +642,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="W86-59-Ixz">
-                                <rect key="frame" x="0.0" y="387" width="393" height="87"/>
+                                <rect key="frame" x="20" y="387.33333333333331" width="300" height="87"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="87" id="TM1-Pb-N3M"/>
+                                    <constraint firstAttribute="width" constant="300" id="ZfK-rp-3yB"/>
                                 </constraints>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the slot:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rsv-bB-1GD">
@@ -666,7 +668,6 @@
                         <constraints>
                             <constraint firstItem="Tbc-ce-7it" firstAttribute="trailing" secondItem="c9r-om-7yL" secondAttribute="trailing" id="1ZM-Y7-Htf"/>
                             <constraint firstItem="dmv-sh-NVc" firstAttribute="leading" secondItem="zzB-In-bGD" secondAttribute="leading" constant="20" id="2P0-r8-6dK"/>
-                            <constraint firstItem="W86-59-Ixz" firstAttribute="trailing" secondItem="zzB-In-bGD" secondAttribute="trailing" id="6QJ-CB-wUT"/>
                             <constraint firstItem="Rsv-bB-1GD" firstAttribute="trailing" secondItem="c9r-om-7yL" secondAttribute="trailing" id="AV8-yg-7tV"/>
                             <constraint firstItem="Tbc-ce-7it" firstAttribute="leading" secondItem="zzB-In-bGD" secondAttribute="leading" constant="50" id="AdC-Kn-Uiw"/>
                             <constraint firstItem="dmv-sh-NVc" firstAttribute="top" secondItem="zzB-In-bGD" secondAttribute="top" constant="10" id="PdD-gD-MYR"/>
@@ -677,7 +678,7 @@
                             <constraint firstItem="dVk-cM-XAr" firstAttribute="leading" secondItem="c9r-om-7yL" secondAttribute="leading" id="g0z-0y-BlL"/>
                             <constraint firstItem="zzB-In-bGD" firstAttribute="trailing" secondItem="dmv-sh-NVc" secondAttribute="trailing" constant="20" id="h51-fF-VXo"/>
                             <constraint firstItem="c9r-om-7yL" firstAttribute="top" secondItem="dmv-sh-NVc" secondAttribute="bottom" constant="20" id="hb4-35-BUA"/>
-                            <constraint firstItem="W86-59-Ixz" firstAttribute="leading" secondItem="zzB-In-bGD" secondAttribute="leading" id="hvf-NC-3MG"/>
+                            <constraint firstItem="W86-59-Ixz" firstAttribute="leading" secondItem="zzB-In-bGD" secondAttribute="leading" constant="20" id="hvf-NC-3MG"/>
                             <constraint firstItem="dVk-cM-XAr" firstAttribute="trailing" secondItem="c9r-om-7yL" secondAttribute="trailing" id="iFe-qB-2Ld"/>
                             <constraint firstItem="Tbc-ce-7it" firstAttribute="top" secondItem="c9r-om-7yL" secondAttribute="bottom" constant="20" id="m48-yQ-zGf"/>
                             <constraint firstItem="zzB-In-bGD" firstAttribute="trailing" secondItem="c9r-om-7yL" secondAttribute="trailing" constant="20" id="vZ3-rR-cOH"/>

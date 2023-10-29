@@ -34,6 +34,8 @@ class LoginViewController: UIViewController {
 //        self.navigationItem.backAction = UIAction(handler:)
     }
     @IBAction func loginBtnHandler(_ sender: Any) {
+        userInfo?.email = username.text ?? ""
+        userInfo?.password = password.text ?? ""
         if loginViewModel.FindingUser(emailId: username.text ?? "", password: password.text ?? "") {
           guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MapViewController") as? MapViewController else { return }
             vc.userInfo = self.userInfo

@@ -9,6 +9,7 @@ import UIKit
 
 class EVProfileHeaderTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var profileView: UIView!
     @IBOutlet weak var userProfileImage: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     
@@ -21,6 +22,7 @@ class EVProfileHeaderTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        profileView.designView()
     }
     
     func config(name: String?) {

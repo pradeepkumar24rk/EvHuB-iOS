@@ -16,6 +16,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var profileLogo: UIImageView!
     @IBOutlet weak var bottomRightBtn: UIImageView!
+    @IBOutlet weak var searchBarView: UIView!
     @IBOutlet weak var currentLoctionBtn: UIImageView!
     
     let locationManager = CLLocationManager()
@@ -25,6 +26,7 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBarView.designView()
         locationManager.delegate = self
         map.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -39,6 +41,7 @@ class MapViewController: UIViewController {
         if val {
             bottomRightBtn.image = UIImage(named: "addPin")
         }
+        self.pinHubLocation()
     }
     // MARK: - RIGHT BTN
     @objc func rightBtnHandler() {
@@ -80,7 +83,7 @@ class MapViewController: UIViewController {
         map.showsUserLocation = true
         
     }
-    
+// MARK: - PIN DISPLAY
     func pinHubLocation() {
         for locationAddress in userDefaults.locationAddresses {
             CLGeocoder().geocodeAddressString(locationAddress.address) { placemarks, error in
@@ -113,8 +116,6 @@ extension MapViewController: CLLocationManagerDelegate {
             print("User Location: \(userLocation.latitude), \(userLocation.longitude)")
             map.showsUserLocation = true
         }
-        
-        self.pinHubLocation()
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -156,9 +157,20 @@ extension MapViewController: MKMapViewDelegate {
         }
     }
 }
-
+// MARK: - ADD NEW PIN
 extension MapViewController: AddPinDelegate {
     func addPin(_ data: HubModel) {
         userDefaults.locationAddresses.append(data)
+        CLGeocoder().geocodeAddressString(data.address) { placemarks, error in
+            if let placemark = placemarks?.first, let location = placemark.location {
+                // Create a custom annotation
+                let customPin = CustomAnnotation(title: data.name, subtitle: data.address, coordinate: CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude))
+                let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
+                self.map.setRegion(region, animated: true)
+                self.map.addAnnotation(customPin)
+            } else {
+                print("Not able to find the location")
+            }
+        }
     }
 }

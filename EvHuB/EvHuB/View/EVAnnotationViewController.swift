@@ -17,6 +17,7 @@ class EVAnnotationViewController: UIViewController {
         super.viewDidLoad()
         guard let val = hubInfo else { return }
         self.navigationItem.title = val.name
+        self.navigationItem.largeTitleDisplayMode = .always
         addressLable.text = val.address
     }
     

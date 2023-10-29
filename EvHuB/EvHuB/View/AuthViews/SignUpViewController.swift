@@ -20,7 +20,6 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = true
         signUpBtn.layer.cornerRadius = 20
         loginBtn.designButton(title: "Already have an account? Login", changeColorText: "Login")
         username.designTextField()
