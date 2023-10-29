@@ -15,15 +15,16 @@ class UserDefaultsManager {
     private let address = "ListOfAddress"
     private let usersData = "Users"
     
-    func getUserDefaultsValue(key: String) -> [String] {
-        if let val = UserDefaults.standard.value(forKey: key) as? [String] {
-            return val
+    func getUserDefaultsValue(key: String) -> [HubModel] {
+        if let data = UserDefaults.standard.value(forKey: key) as? Data,
+           let decodedValue = try? PropertyListDecoder().decode([HubModel].self, from: data) {
+            return decodedValue
         }
         return []
     }
     
-    func setUserDefaultsValue(key: String, value: [String]) {
-        UserDefaults.standard.set(value, forKey: key)
+    func setUserDefaultsValue(key: String, value: [HubModel]) {
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(value), forKey: key)
     }
     
     func setUserDict(key: String,_ newValue: [String: [UserModel]]) {
@@ -38,7 +39,7 @@ class UserDefaultsManager {
         return ["": [UserModel]()]
     }
     
-    var locationAddresses: [String] {
+    var locationAddresses: [HubModel] {
         get {
             return getUserDefaultsValue(key: address)
         }

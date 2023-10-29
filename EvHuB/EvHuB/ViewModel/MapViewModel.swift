@@ -35,7 +35,7 @@ class MapViewModel {
         for location in userDefaults.locationAddresses {
             dispatchGroup.enter() // Enter the dispatch group
             
-            CLGeocoder().geocodeAddressString(location) { placemarks, error in
+            CLGeocoder().geocodeAddressString(location.address) { placemarks, error in
                 if let placemark = placemarks?.first, let location = placemark.location {
                     destinationPlacemark = MKPlacemark(coordinate: location.coordinate)
                     guard let desPlacemark = destinationPlacemark else {

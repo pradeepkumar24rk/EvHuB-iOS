@@ -59,8 +59,8 @@ class MapViewController: UIViewController {
     //MARK: - PROFILE
     @objc func profileLogoBtnHandle() {
         guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EVProfileViewController") as? EVProfileViewController else { return }
-                vc.userInfo = self.userInfo
-                self.navigationController?.pushViewController(vc, animated: true)
+        vc.userInfo = self.userInfo
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     //MARK: - CURRENT LOCATION
     @objc func currentLocationBtnHandler() {
@@ -83,10 +83,10 @@ class MapViewController: UIViewController {
     
     func pinHubLocation() {
         for locationAddress in userDefaults.locationAddresses {
-            CLGeocoder().geocodeAddressString(locationAddress) { placemarks, error in
-                if let placemark = placemarks?.first, let location = placemark.location, let titleName = placemark.name {
+            CLGeocoder().geocodeAddressString(locationAddress.address) { placemarks, error in
+                if let placemark = placemarks?.first, let location = placemark.location {
                     // Create a custom annotation
-                    let customPin = CustomAnnotation(title: titleName, subtitle: locationAddress, coordinate: CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude))
+                    let customPin = CustomAnnotation(title: locationAddress.name, subtitle: locationAddress.address, coordinate: CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude))
                     self.map.addAnnotation(customPin)
                 } else {
                     print("Not able to find the location")
@@ -147,12 +147,18 @@ extension MapViewController: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        print(view.annotation?.title)
+        if let title = view.annotation?.title, let subtitle = view.annotation?.subtitle {
+            let data = HubModel(name: title ?? "", address: subtitle ?? "")
+            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EVAnnotationViewController") as? EVAnnotationViewController {
+                vc.hubInfo = data
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
 }
 
 extension MapViewController: AddPinDelegate {
-    func addPin(_ data: String) {
+    func addPin(_ data: HubModel) {
         userDefaults.locationAddresses.append(data)
     }
 }

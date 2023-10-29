@@ -8,10 +8,11 @@
 import UIKit
 
 protocol AddPinDelegate {
-    func addPin(_ data: String)
+    func addPin(_ data: HubModel)
 }
 
 class AddPinViewController: UIViewController {
+    @IBOutlet weak var titleLable: UITextField!
     @IBOutlet weak var address: UITextView!
     
     var delegate: AddPinDelegate?
@@ -21,7 +22,8 @@ class AddPinViewController: UIViewController {
     }
     
     @IBAction func submitBtnHandler(_ sender: Any) {
-        delegate?.addPin(address.text ?? "")
+        let data = HubModel(name: titleLable.text ?? "", address: address.text ?? "")
+        delegate?.addPin(data)
         self.navigationController?.popViewController(animated: true)
     }
 }
