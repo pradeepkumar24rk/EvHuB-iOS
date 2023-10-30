@@ -148,8 +148,8 @@ extension MapViewController: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        if let title = view.annotation?.title, let subtitle = view.annotation?.subtitle {
-            let data = HubModel(name: title ?? "", address: subtitle ?? "")
+        if let title = view.annotation?.title {
+            let data = mapViewModel.findTheAnnotation(title ?? "")
             if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EVAnnotationViewController") as? EVAnnotationViewController {
                 vc.hubInfo = data
                 self.navigationController?.pushViewController(vc, animated: true)

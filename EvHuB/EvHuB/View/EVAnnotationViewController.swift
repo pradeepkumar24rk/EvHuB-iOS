@@ -8,7 +8,9 @@
 import UIKit
 
 class EVAnnotationViewController: UIViewController {
-
+    
+    @IBOutlet weak var timeOfCharging: UITextField!
+    @IBOutlet weak var paymentBtn: UIButton!
     @IBOutlet weak var addressLable: UILabel!
     
     var hubInfo: HubModel?
@@ -19,6 +21,14 @@ class EVAnnotationViewController: UIViewController {
         self.navigationItem.title = val.name
         self.navigationItem.largeTitleDisplayMode = .always
         addressLable.text = val.address
+        timeOfCharging.addTarget(self, action: #selector(priceForPayment), for: .editingChanged)
+    }
+    
+    @objc func priceForPayment() {
+        if let time = timeOfCharging.text, let hubprice = hubInfo?.amountOfChargerPerMin {
+            let price = (Int(time) ?? 0) * hubprice
+            paymentBtn.setTitle("Payment Rs.\(price)", for: .normal)
+        }
     }
     
     @IBAction func paymentBtnHandler(_ sender: Any) {

@@ -71,4 +71,15 @@ class MapViewModel {
             completionHandler(true)
         }
     }
+    
+    func findTheAnnotation(_ hubName: String) -> HubModel {
+        let data = userDefaults.locationAddresses
+        let info = data.filter({ hub in
+            if hubName == hub.name {
+                return true
+            }
+            return false
+        })
+        return info[0]
+    }
 }

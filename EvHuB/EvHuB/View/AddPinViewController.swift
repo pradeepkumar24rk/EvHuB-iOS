@@ -14,6 +14,7 @@ protocol AddPinDelegate {
 class AddPinViewController: UIViewController {
     @IBOutlet weak var titleLable: UITextField!
     @IBOutlet weak var address: UITextView!
+    @IBOutlet weak var chargingPrice: UITextField!
     
     var delegate: AddPinDelegate?
     
@@ -22,8 +23,11 @@ class AddPinViewController: UIViewController {
     }
     
     @IBAction func submitBtnHandler(_ sender: Any) {
-        let data = HubModel(name: titleLable.text ?? "", address: address.text ?? "")
-        delegate?.addPin(data)
+        if let title = titleLable.text, let address = address.text, let price = Int(chargingPrice.text ?? "0") {
+            let data = HubModel(name: title, address: address, amountOfChargerPerMin: price)
+            delegate?.addPin(data)
+        }
+        
         self.navigationController?.popViewController(animated: true)
     }
 }
